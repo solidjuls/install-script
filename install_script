@@ -1,0 +1,34 @@
+#!/bin/bash
+
+INSTALL HOMEBREW
+brew install git
+brew cask install visual-studio-code
+code --install-extension midnightsyntax.vscode-wrap-console-log
+code --install-extension CoenraadS.bracket-pair-colorizer
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension eamodio.gitlens
+code --install-extension esbenp.prettier-vscode
+code --install-extension eamodio.gitlens
+code --install-extension wix.vscode-import-cost
+code --install-extension sdras.night-owl
+
+# NVM, node...
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash 
+nvm install node
+nvm use node
+
+brew install yarn
+brew cask install vlc
+brew cask install slack
+brew cask install firefox
+brew cask install spotify
+brew cask install hyperswitch
+brew install ruby
+
+
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Spotify.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Visual Studio Code.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"; killall Dock
+# Disable the finger swipe browser back/forward
+defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
